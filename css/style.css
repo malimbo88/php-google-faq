@@ -6,7 +6,30 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 /* General */
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+/* top header */
+.top_header > li {
+  display: inline-block;
+}
+
+.logo {
+  width: 100px;
+}
+
+/* sub header */
+.sub_header > li {
+  display: inline-block;
+}
+
+.account_img {
+  width: 50px;
 }

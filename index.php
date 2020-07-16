@@ -1,4 +1,10 @@
 <?php
+
+//Account mail
+$GET_["mail"];
+var_dump($GET_["mail"]);
+
+//Array policies google database
 $google_policies_faq = [
 
   [
@@ -86,8 +92,6 @@ $google_policies_faq = [
               hanno determinato il clic su un annuncio."
   ]
 ];
-
-// var_dump($google_policies_faq)
 ?>
 
 <!DOCTYPE html>
@@ -105,6 +109,51 @@ $google_policies_faq = [
 
       <!-- header -->
       <header>
+        <div class="wrapper_header">
+
+          <nav>
+
+            <!-- top header -->
+            <ul class="top_header">
+              <li class="hamburger_menu"></li>
+              <li class="logo">
+                <img src="img/googlelogo.png" alt="Google logo">
+              </li>
+              <li class="title"></li>
+            </ul>
+            <!-- end top header -->
+
+            <!-- top header -->
+            <ul class="sub_header">
+              <li class="inline_menu">
+                <span>Introduzione</span>
+              </li>
+              <li class="inline_menu">
+                <span>Norme sulla privacy</span>
+              </li>
+              <li class="inline_menu">
+                <span>Termini di servizio</span>
+              </li>
+              <li class="inline_menu">
+                <span>Tecnologie</span>
+              </li>
+              <li class="inline_menu">
+                <span>Domande Frequenti</span>
+              </li>
+              <li class="account">
+                <div class="account_img">
+                  <img src="img/logo.jpg" alt="Account logo">
+                </div>
+                <span class="account_mail">
+                  <?php echo $GET_["mail"]; ?>
+                </span>
+              </li>
+            </ul>
+            <!-- end top header -->
+
+          </nav>
+
+        </div>
       </header>
       <!-- end header -->
 
@@ -120,17 +169,17 @@ $google_policies_faq = [
               <ul class="policies_faq_list">
                 <?php foreach ($google_policies_faq as $single_faq => $question_reply) { ?>
 
-                  <!-- single faq <?php echo $single_faq ?> -->
+                  <!-- single faq <?php echo $single_faq; ?> -->
                   <li class="single_faq">
                     <?php if (isset($question_reply["question"]) && !empty($question_reply["question"])) {?>
-                      <h2 class="question"><?php echo $question_reply["question"] ?></h2>
+                      <h2 class="question"><?php echo $question_reply["question"]; ?></h2>
                     <?php } ?>
 
                     <?php if (isset($question_reply["reply"]) && !empty($question_reply["reply"])) {?>
-                      <p class="reply"><?php echo $question_reply["reply"] ?></p>
+                      <p class="reply"><?php echo $question_reply["reply"]; ?></p>
                     <?php } ?>
                   </li>
-                  <!-- end single faq <?php echo $single_faq ?> -->
+                  <!-- end single faq <?php echo $single_faq; ?> -->
 
                 <?php } ?>
               </ul>
